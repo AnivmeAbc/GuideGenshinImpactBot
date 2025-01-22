@@ -14,10 +14,11 @@
 
 # Запуск бота
 - `https://t.me/anivme_bot`
-- Установить версию Python 3.x
-- Установить telebot
+- Установить версию Python 3.13     `https://www.python.org/downloads/release/python-3130/`
+  ''при установке Python нажать галочку на установку PYTH''
+- Установить telebot     `https://pypi.org/project/pyTelegramBotAPI/`
 - Скачать папку pic и поместить в одну папку с main.py
-- Вставить Ваш BOT_API
+- Вставить Ваш BOT_API     `https://t.me/BotFather`
 - Запустить бота через main.py
 
 
