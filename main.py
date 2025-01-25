@@ -67,16 +67,61 @@ def answer(call):
         markup3.add(btn12, btn13, btn14, btn15, btn16, btn17, btn18)
         bot.send_message(call.message.chat.id, 'Выберите персонажа:', reply_markup=markup3)
         
-    elif call.data  == 'Ayka':
-        markup4 = types.InlineKeyboardMarkup()
-        btn19 = types.InlineKeyboardButton('🔙back', callback_data='back')
-        markup4.add(btn19)
-        file = open('аяка.jpg', 'rb')
-        bot.send_photo(call.message.chat.id, file)
-        bot.send_message(call.message.chat.id, 'Актуальная Аяка', reply_markup=markup4)
+    elif call.data  == 'Ayka': 
+            markup4 = types.InlineKeyboardMarkup() 
+            btn19 = types.InlineKeyboardButton('🔙back', callback_data='back') 
+            markup4.add(btn19) 
+            file = open('Ayaka1.jpg', 'rb') 
+            bot.send_photo(call.message.chat.id, file) 
+            bot.send_message(call.message.chat.id, 'Актуальная Аяка', reply_markup=markup4) 
+
+    elif call.data == 'Eola':
+        markup5 = types.InlineKeyboardMarkup() 
+        btn20 = types.InlineKeyboardButton('🔙back', callback_data='back') 
+        markup5.add(btn20) 
+        bot.delete_message(call.message.chat.id, call.message.message_id) 
+        file = open('Eoula1.jpg', 'rb') 
+        bot.send_photo(call.message.chat.id, file) 
+        bot.send_message(call.message.chat.id, 'Актуальная Эола', reply_markup=markup5)
     
-    elif call.data == 'back':
-        bot.edit_message_text(call.message.text, call.message.chat.id, call.message.message_id, reply_markup=start(call.message))
+    elif call.data == 'ShenHe':
+        markup6 = types.InlineKeyboardMarkup() 
+        btn21 = types.InlineKeyboardButton('🔙back', callback_data='back') 
+        markup6.add(btn21) 
+        bot.delete_message(call.message.chat.id, call.message.message_id) 
+        file = open('Shenya.jpg', 'rb') 
+        bot.send_photo(call.message.chat.id, file) 
+        bot.send_message(call.message.chat.id, 'Актуальная Шень Хэ', reply_markup=markup6)
+    
+    elif call.data == 'CiCi':
+        markup7 = types.InlineKeyboardMarkup() 
+        btn22 = types.InlineKeyboardButton('🔙back', callback_data='back') 
+        markup7.add(btn22) 
+        bot.delete_message(call.message.chat.id, call.message.message_id) 
+        file = open('Cici1.jpg', 'rb') 
+        bot.send_photo(call.message.chat.id, file) 
+        bot.send_message(call.message.chat.id, 'Актуальная ЦиЦи', reply_markup=markup7)
+
+    elif call.data == 'Rizli':
+        markup8 = types.InlineKeyboardMarkup() 
+        btn23 = types.InlineKeyboardButton('🔙back', callback_data='back') 
+        markup8.add(btn23) 
+        bot.delete_message(call.message.chat.id, call.message.message_id) 
+        file = open('Rizli1.jpg', 'rb') 
+        bot.send_photo(call.message.chat.id, file) 
+        bot.send_message(call.message.chat.id, 'Актуальный Ризли', reply_markup=markup8)
+    
+    elif call.data == 'Koza':
+        markup9 = types.InlineKeyboardMarkup() 
+        btn24 = types.InlineKeyboardButton('🔙back', callback_data='back') 
+        markup9.add(btn24) 
+        bot.delete_message(call.message.chat.id, call.message.message_id) 
+        file = open('Koza1.jpg', 'rb') 
+        bot.send_photo(call.message.chat.id, file) 
+        bot.send_message(call.message.chat.id, 'Актуальная Гань Юй', reply_markup=markup9)
+    
+    elif call.data == 'back': 
+        bot.edit_message_text(call.message.text, call.message.chat.id, call.message.message_id, reply_markup=start(call.message)) 
 
 
 
