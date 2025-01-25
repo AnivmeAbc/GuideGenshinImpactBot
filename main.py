@@ -18,7 +18,7 @@ def start(message):
     bot1 = types.InlineKeyboardButton("✨Сборки", callback_data="sborki")
     bot2 = types.InlineKeyboardButton("☠️Бездна", callback_data="bezdna")
     markup.add(bot1, bot2,)
-    file = open('превью.jpg', 'rb')
+    file = open('pic\превью.jpg', 'rb')
     bot.send_photo(message.chat.id, file)
     bot.send_message(message.chat.id, f'Привествую Вас, Путешественник/ца! Выберите кнопочку:', reply_markup=markup)
     
@@ -50,7 +50,7 @@ def answer(call):
         btn3 = types.InlineKeyboardButton('🔙back', callback_data='back')
         markup1.add(btn3)
         bot.delete_message(call.message.chat.id, call.message.message_id)
-        file = open('бездна.jpg', 'rb')
+        file = open('pic\бездна.jpg', 'rb')
         bot.send_photo(call.message.chat.id, file)
         bot.send_message(call.message.chat.id, 'Актуальная инфрмация по бездне версия 5.2', reply_markup=markup1)        
 
@@ -71,7 +71,7 @@ def answer(call):
             markup4 = types.InlineKeyboardMarkup() 
             btn19 = types.InlineKeyboardButton('🔙back', callback_data='back') 
             markup4.add(btn19) 
-            file = open('Ayaka1.jpg', 'rb') 
+            file = open('pic\Ayaka1.jpg', 'rb') 
             bot.send_photo(call.message.chat.id, file) 
             bot.send_message(call.message.chat.id, 'Актуальная Аяка', reply_markup=markup4) 
 
@@ -80,7 +80,7 @@ def answer(call):
         btn20 = types.InlineKeyboardButton('🔙back', callback_data='back') 
         markup5.add(btn20) 
         bot.delete_message(call.message.chat.id, call.message.message_id) 
-        file = open('Eoula1.jpg', 'rb') 
+        file = open('pic\Eoula1.jpg', 'rb') 
         bot.send_photo(call.message.chat.id, file) 
         bot.send_message(call.message.chat.id, 'Актуальная Эола', reply_markup=markup5)
     
@@ -89,7 +89,7 @@ def answer(call):
         btn21 = types.InlineKeyboardButton('🔙back', callback_data='back') 
         markup6.add(btn21) 
         bot.delete_message(call.message.chat.id, call.message.message_id) 
-        file = open('Shenya.jpg', 'rb') 
+        file = open('pic\Shenya.jpg', 'rb') 
         bot.send_photo(call.message.chat.id, file) 
         bot.send_message(call.message.chat.id, 'Актуальная Шень Хэ', reply_markup=markup6)
     
@@ -98,7 +98,7 @@ def answer(call):
         btn22 = types.InlineKeyboardButton('🔙back', callback_data='back') 
         markup7.add(btn22) 
         bot.delete_message(call.message.chat.id, call.message.message_id) 
-        file = open('Cici1.jpg', 'rb') 
+        file = open('pic\Cici1.jpg', 'rb') 
         bot.send_photo(call.message.chat.id, file) 
         bot.send_message(call.message.chat.id, 'Актуальная ЦиЦи', reply_markup=markup7)
 
@@ -107,7 +107,7 @@ def answer(call):
         btn23 = types.InlineKeyboardButton('🔙back', callback_data='back') 
         markup8.add(btn23) 
         bot.delete_message(call.message.chat.id, call.message.message_id) 
-        file = open('Rizli1.jpg', 'rb') 
+        file = open('pic\Rizli1.jpg', 'rb') 
         bot.send_photo(call.message.chat.id, file) 
         bot.send_message(call.message.chat.id, 'Актуальный Ризли', reply_markup=markup8)
     
@@ -116,7 +116,7 @@ def answer(call):
         btn24 = types.InlineKeyboardButton('🔙back', callback_data='back') 
         markup9.add(btn24) 
         bot.delete_message(call.message.chat.id, call.message.message_id) 
-        file = open('Koza1.jpg', 'rb') 
+        file = open('pic\Koza1.jpg', 'rb') 
         bot.send_photo(call.message.chat.id, file) 
         bot.send_message(call.message.chat.id, 'Актуальная Гань Юй', reply_markup=markup9)
     
