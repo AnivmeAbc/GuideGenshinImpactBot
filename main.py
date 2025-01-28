@@ -71,9 +71,10 @@ def answer(call):
             markup4 = types.InlineKeyboardMarkup() 
             btn19 = types.InlineKeyboardButton('🔙back', callback_data='back') 
             markup4.add(btn19) 
-            file = open('pic\Ayaka1.jpg', 'rb') 
-            bot.send_photo(call.message.chat.id, file) 
-            bot.send_message(call.message.chat.id, 'Актуальная Аяка', reply_markup=markup4) 
+            file = open('Ayaka1.jpg', 'rb')
+            file1 = open('Ayaka2.jpg', 'rb')
+            caption = 'Актульный гайд на Аяку'
+            bot.send_photo(call.message.chat.id, file,file1, caption, reply_markup=markup4)
 
     elif call.data == 'Eola':
         markup5 = types.InlineKeyboardMarkup() 
@@ -81,17 +82,18 @@ def answer(call):
         markup5.add(btn20) 
         bot.delete_message(call.message.chat.id, call.message.message_id) 
         file = open('pic\Eoula1.jpg', 'rb') 
-        bot.send_photo(call.message.chat.id, file) 
-        bot.send_message(call.message.chat.id, 'Актуальная Эола', reply_markup=markup5)
+        caption = 'Актульный гайд на Эолу'
+        bot.send_photo(call.message.chat.id, file, caption, reply_markup=markup5)
     
+        
     elif call.data == 'ShenHe':
         markup6 = types.InlineKeyboardMarkup() 
         btn21 = types.InlineKeyboardButton('🔙back', callback_data='back') 
         markup6.add(btn21) 
         bot.delete_message(call.message.chat.id, call.message.message_id) 
         file = open('pic\Shenya.jpg', 'rb') 
-        bot.send_photo(call.message.chat.id, file) 
-        bot.send_message(call.message.chat.id, 'Актуальная Шень Хэ', reply_markup=markup6)
+        caption = 'Актульный гайд на Шень Хэ'
+        bot.send_photo(call.message.chat.id, file, caption,reply_markup=markup6)
     
     elif call.data == 'CiCi':
         markup7 = types.InlineKeyboardMarkup() 
@@ -99,8 +101,8 @@ def answer(call):
         markup7.add(btn22) 
         bot.delete_message(call.message.chat.id, call.message.message_id) 
         file = open('pic\Cici1.jpg', 'rb') 
-        bot.send_photo(call.message.chat.id, file) 
-        bot.send_message(call.message.chat.id, 'Актуальная ЦиЦи', reply_markup=markup7)
+        caption = 'Актульный гайд на ЦиЦи'
+        bot.send_photo(call.message.chat.id, file, caption,reply_markup=markup7)
 
     elif call.data == 'Rizli':
         markup8 = types.InlineKeyboardMarkup() 
@@ -108,8 +110,8 @@ def answer(call):
         markup8.add(btn23) 
         bot.delete_message(call.message.chat.id, call.message.message_id) 
         file = open('pic\Rizli1.jpg', 'rb') 
-        bot.send_photo(call.message.chat.id, file) 
-        bot.send_message(call.message.chat.id, 'Актуальный Ризли', reply_markup=markup8)
+        caption = 'Актульный гайд на Ризли'
+        bot.send_photo(call.message.chat.id, file, caption,reply_markup=markup8)
     
     elif call.data == 'Koza':
         markup9 = types.InlineKeyboardMarkup() 
@@ -117,12 +119,23 @@ def answer(call):
         markup9.add(btn24) 
         bot.delete_message(call.message.chat.id, call.message.message_id) 
         file = open('pic\Koza1.jpg', 'rb') 
-        bot.send_photo(call.message.chat.id, file) 
-        bot.send_message(call.message.chat.id, 'Актуальная Гань Юй', reply_markup=markup9)
+        caption = 'Актульный гайд на Гань Юй'
+        bot.send_photo(call.message.chat.id, file, caption,reply_markup=markup9)
+    
+    elif call.data == 'Sitlali':
+        markup9 = types.InlineKeyboardMarkup() 
+        btn25 = types.InlineKeyboardButton('🔙back', callback_data='back') 
+        markup9.add(btn25) 
+        bot.delete_message(call.message.chat.id, call.message.message_id) 
+        bot.send_message(call.message.chat.id, 'Полноценный гайд пока не вышел', reply_markup=markup9)
+    
     
     elif call.data == 'back': 
         bot.edit_message_text(call.message.text, call.message.chat.id, call.message.message_id, reply_markup=start(call.message)) 
 
+    elif call.data == 'piro':
+        markup10 = types.InlineKeyboardMarkup()
+        btn26 = types.InlineKeyboardButton('🔙back', callback_data='back')
 
 
 
