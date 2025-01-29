@@ -6,9 +6,9 @@ BOT_API = 'YOUR_API'
 
 
 bot = telebot.TeleBot(BOT_API)
-from telebot import types
 telebot.logger.setLevel(logging.INFO)
 
+storage = dict()
 
 @bot.message_handler(commands=['start'])
 def start(message):
@@ -18,16 +18,16 @@ def start(message):
     bot1 = types.InlineKeyboardButton("✨Сборки", callback_data="sborki")
     bot2 = types.InlineKeyboardButton("☠️Бездна", callback_data="bezdna")
     markup.add(bot1, bot2,)
-    file = open('pic\превью.jpg', 'rb')
+    file = open('превью.jpg', 'rb')
     bot.send_photo(message.chat.id, file)
-    bot.send_message(message.chat.id, f'Привествую Вас, Путешественник/ца! Выберите кнопочку:', reply_markup=markup)
+    bot.send_message(message.chat.id, 'Привествую Вас, Путешественник/ца! Выберите кнопочку:', reply_markup=markup)
     
     
 
 @bot.callback_query_handler(func=lambda call: True)
 def answer(call):
     if call.data == "sborki":
-        bot.delete_message(call.message.chat.id, call.message.message_id)
+        #bot.delete_message(call.message.chat.id, call.message.message_id)
         markup2 = types.InlineKeyboardMarkup()
         btn4 = types.InlineKeyboardButton('Крио', callback_data='krio')
         btn5 = types.InlineKeyboardButton('Пиро', callback_data='piro')
@@ -50,7 +50,7 @@ def answer(call):
         btn3 = types.InlineKeyboardButton('🔙back', callback_data='back')
         markup1.add(btn3)
         bot.delete_message(call.message.chat.id, call.message.message_id)
-        file = open('pic\бездна.jpg', 'rb')
+        file = open('бездна.jpg', 'rb')
         bot.send_photo(call.message.chat.id, file)
         bot.send_message(call.message.chat.id, 'Актуальная инфрмация по бездне версия 5.2', reply_markup=markup1)        
 
@@ -68,20 +68,20 @@ def answer(call):
         bot.send_message(call.message.chat.id, 'Выберите персонажа:', reply_markup=markup3)
         
     elif call.data  == 'Ayka': 
-            markup4 = types.InlineKeyboardMarkup() 
-            btn19 = types.InlineKeyboardButton('🔙back', callback_data='back') 
-            markup4.add(btn19) 
-            file = open('Ayaka1.jpg', 'rb')
-            file1 = open('Ayaka2.jpg', 'rb')
-            caption = 'Актульный гайд на Аяку'
-            bot.send_photo(call.message.chat.id, file,file1, caption, reply_markup=markup4)
+        markup4 = types.InlineKeyboardMarkup() 
+        btn19 = types.InlineKeyboardButton('🔙back', callback_data='back') 
+        markup4.add(btn19) 
+        file = open('Ayaka1.jpg', 'rb')
+        
+        caption = 'Актульный гайд на Аяку'
+        bot.send_photo(call.message.chat.id, file, caption, reply_markup=markup4)
 
     elif call.data == 'Eola':
         markup5 = types.InlineKeyboardMarkup() 
         btn20 = types.InlineKeyboardButton('🔙back', callback_data='back') 
         markup5.add(btn20) 
         bot.delete_message(call.message.chat.id, call.message.message_id) 
-        file = open('pic\Eoula1.jpg', 'rb') 
+        file = open('Eoula1.jpg', 'rb') 
         caption = 'Актульный гайд на Эолу'
         bot.send_photo(call.message.chat.id, file, caption, reply_markup=markup5)
     
@@ -91,7 +91,7 @@ def answer(call):
         btn21 = types.InlineKeyboardButton('🔙back', callback_data='back') 
         markup6.add(btn21) 
         bot.delete_message(call.message.chat.id, call.message.message_id) 
-        file = open('pic\Shenya.jpg', 'rb') 
+        file = open('Shenya.jpg', 'rb') 
         caption = 'Актульный гайд на Шень Хэ'
         bot.send_photo(call.message.chat.id, file, caption,reply_markup=markup6)
     
@@ -100,7 +100,7 @@ def answer(call):
         btn22 = types.InlineKeyboardButton('🔙back', callback_data='back') 
         markup7.add(btn22) 
         bot.delete_message(call.message.chat.id, call.message.message_id) 
-        file = open('pic\Cici1.jpg', 'rb') 
+        file = open('Cici1.jpg', 'rb') 
         caption = 'Актульный гайд на ЦиЦи'
         bot.send_photo(call.message.chat.id, file, caption,reply_markup=markup7)
 
@@ -109,7 +109,7 @@ def answer(call):
         btn23 = types.InlineKeyboardButton('🔙back', callback_data='back') 
         markup8.add(btn23) 
         bot.delete_message(call.message.chat.id, call.message.message_id) 
-        file = open('pic\Rizli1.jpg', 'rb') 
+        file = open('Rizli1.jpg', 'rb') 
         caption = 'Актульный гайд на Ризли'
         bot.send_photo(call.message.chat.id, file, caption,reply_markup=markup8)
     
@@ -118,7 +118,7 @@ def answer(call):
         btn24 = types.InlineKeyboardButton('🔙back', callback_data='back') 
         markup9.add(btn24) 
         bot.delete_message(call.message.chat.id, call.message.message_id) 
-        file = open('pic\Koza1.jpg', 'rb') 
+        file = open('Koza1.jpg', 'rb') 
         caption = 'Актульный гайд на Гань Юй'
         bot.send_photo(call.message.chat.id, file, caption,reply_markup=markup9)
     
@@ -135,12 +135,36 @@ def answer(call):
 
     elif call.data == 'piro':
         markup10 = types.InlineKeyboardMarkup()
-        btn26 = types.InlineKeyboardButton('🔙back', callback_data='back')
+        btn26 = types.InlineKeyboardButton('Дилюк', callback_data='Diluc')
+        btn27 = types.InlineKeyboardButton('Мавуика', callback_data='Mavuika')
+        btn28 = types.InlineKeyboardButton('Ёимия', callback_data='Yoimiya')
+        btn29 = types.InlineKeyboardButton('Кли', callback_data='Kli')
+        btn30 = types.InlineKeyboardButton('Арлекино', callback_data='Arli')
+        btn31 = types.InlineKeyboardButton('Лини', callback_data='Lini')
+        btn32 = types.InlineKeyboardButton('Ху Тао', callback_data='XyTao')
+        btn33 = types.InlineKeyboardButton('Дехья', callback_data='Dexya')
+        btn34 = types.InlineKeyboardButton('🔙back', callback_data='back')
+        markup10.add(btn26, btn27, btn28, btn29, btn30, btn31, btn32, btn33, btn34)
+    
+    elif call.data == 'gidro':
+        markup10 = types.InlineKeyboardMarkup()
+        btn35 = types.InlineKeyboardButton('Елань', callback_data='Elan')
+        btn36 = types.InlineKeyboardButton('Нёвиллет', callback_data='Neva')
+        btn37 = types.InlineKeyboardButton('Фурина', callback_data='Fyrina')
+        btn38 = types.InlineKeyboardButton('Тарталья', callback_data='Tartalya')
+        btn39 = types.InlineKeyboardButton('Нилу', callback_data='Nily')
+        btn40 = types.InlineKeyboardButton('Мона', callback_data='Mona')
+        btn41 = types.InlineKeyboardButton('Сиджвин', callback_data='Sidzvin')
+        btn42 = types.InlineKeyboardButton('Аято', callback_data='Ayato')
+        btn43 = types.InlineKeyboardButton('Муалани', callback_data='Myalani')
+        btn44 = types.InlineKeyboardButton('Кокоми', callback_data='Kokomi')
+        btn45 = types.InlineKeyboardButton('🔙back', callback_data='back')
+        markup10.add(btn35, btn36, btn37, btn38, btn39, btn40, btn41, btn42, btn43, btn44, btn45)
 
 
 
 
-storage = dict()
+
 
 def init_storage(user_id):
     storage[user_id] = dict(attempt=None, random_digit=None)
