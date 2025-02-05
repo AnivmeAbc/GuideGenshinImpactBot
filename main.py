@@ -2,7 +2,7 @@ import telebot
 from telebot import types
 import logging
 
-BOT_API = 'YOUR_API'
+BOT_API = 'YOUR_BOT_API_KEY'
 
 
 bot = telebot.TeleBot(BOT_API)
@@ -28,23 +28,17 @@ def start(message):
 @bot.callback_query_handler(func=lambda call: True)
 def answer(call):
     if call.data == "sborki":
-        #bot.delete_message(call.message.chat.id, call.message.message_id)
-        markup2 = types.InlineKeyboardMarkup()
+        markup2 = types.InlineKeyboardMarkup(row_width=2)
         btn4 = types.InlineKeyboardButton('Крио', callback_data='krio')
         btn5 = types.InlineKeyboardButton('Пиро', callback_data='piro')
         btn6 = types.InlineKeyboardButton('Гидро', callback_data='gidro')
         btn7 = types.InlineKeyboardButton('Электро', callback_data='electro')
-        btn8 = types.InlineKeyboardButton('Гео', callback_data='heo')
+        btn8 = types.InlineKeyboardButton('Гео', callback_data='geo')
         btn9 = types.InlineKeyboardButton('Дендро', callback_data='dendro')
         btn10 = types.InlineKeyboardButton('Анемо', callback_data='anemo')
         btn11 = types.InlineKeyboardButton('🔙back', callback_data='back')
-        markup2.add(btn4, btn5, btn6, btn7, btn8, btn9, btn10, btn11)
-        
-        #bot.send_photo(call.message.chat.id)
+        markup2.add(btn4, btn5, btn6, btn7, btn8, btn9, btn10, btn11)    
         bot.send_message(call.message.chat.id, 'Выберете стихию:', reply_markup=markup2)        
-
-    #elif call.data == 'back':
-        #bot.edit_message_text(call.message.text, call.message.chat.id, call.message.message_id, reply_markup=start(call.message))
 
     elif call.data == "bezdna":
         markup1 = types.InlineKeyboardMarkup()
@@ -69,26 +63,26 @@ def answer(call):
         bot.send_message(call.message.chat.id, 'Выберите персонажа:', reply_markup=markup3)
         
     elif call.data  == 'Ayka': 
-            markup4 = types.InlineKeyboardMarkup() 
-            btn19 = types.InlineKeyboardButton('🔙back', callback_data='back') 
-            markup4.add(btn19)
-            bot.delete_message(call.message.chat.id, call.message.message_id)
-            media = [telebot.types.InputMediaPhoto(open('Ayaka1.jpg', 'rb')),
-            telebot.types.InputMediaPhoto(open('Ayaka2.jpg', 'rb')),
-            telebot.types.InputMediaPhoto(open('Ayaka3.jpg', 'rb'))]
-            bot.send_media_group(call.message.chat.id, media)
-            bot.send_message(call.message.chat.id, 'Актуальный гайд на Аяку', reply_markup=markup4)
+        markup4 = types.InlineKeyboardMarkup() 
+        btn19 = types.InlineKeyboardButton('🔙back', callback_data='back2') 
+        markup4.add(btn19)
+        bot.delete_message(call.message.chat.id, call.message.message_id)
+        media = [telebot.types.InputMediaPhoto(open('Ayaka1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Ayaka2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Ayaka3.jpg', 'rb'))]
+        bot.send_media_group(call.message.chat.id, media)
+        bot.send_message(call.message.chat.id, 'Актуальный гайд на Аяку', reply_markup=markup4)
 
     elif call.data == 'Eola':
-            markup5 = types.InlineKeyboardMarkup() 
-            btn20 = types.InlineKeyboardButton('🔙back', callback_data='back') 
-            markup5.add(btn20)
-            bot.delete_message(call.message.chat.id, call.message.message_id)
-            media = [telebot.types.InputMediaPhoto(open('Eola1.jpg', 'rb')),
-            telebot.types.InputMediaPhoto(open('Eola2.jpg', 'rb')),
-            telebot.types.InputMediaPhoto(open('Eola3.jpg', 'rb'))]
-            bot.send_media_group(call.message.chat.id, media)
-            bot.send_message(call.message.chat.id, 'Актуальный гайд на Эолу', reply_markup=markup5) 
+        markup5 = types.InlineKeyboardMarkup() 
+        btn20 = types.InlineKeyboardButton('🔙back', callback_data='back') 
+        markup5.add(btn20)
+        bot.delete_message(call.message.chat.id, call.message.message_id)
+        media = [telebot.types.InputMediaPhoto(open('Eola1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Eola2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Eola3.jpg', 'rb'))]
+        bot.send_media_group(call.message.chat.id, media)
+        bot.send_message(call.message.chat.id, 'Актуальный гайд на Эолу', reply_markup=markup5) 
         
     elif call.data == 'ShenHe':
         markup6 = types.InlineKeyboardMarkup() 
@@ -139,11 +133,12 @@ def answer(call):
         bot.delete_message(call.message.chat.id, call.message.message_id) 
         bot.send_message(call.message.chat.id, 'Полноценный гайд пока не вышел', reply_markup=markup9)
     
+
     
     elif call.data == 'back': 
         bot.edit_message_text(call.message.text, call.message.chat.id, call.message.message_id, reply_markup=start(call.message)) 
 
-        elif call.data == 'piro':
+    elif call.data == 'piro':
         markup10 = types.InlineKeyboardMarkup()
         
         btn26 = types.InlineKeyboardButton('Дилюк', callback_data='Diluc')
@@ -263,14 +258,14 @@ def answer(call):
         btn51 = types.InlineKeyboardButton('Муалани', callback_data='Myalani')
         btn52 = types.InlineKeyboardButton('Кокоми', callback_data='Kokomi')
         btn53 = types.InlineKeyboardButton('🔙back', callback_data='back')
-        markup10.add(btn43, btn44, btn45, btn46, btn47, btn48, btn49, btn50, btn51, btn52, btn53)
+        markup19.add(btn43, btn44, btn45, btn46, btn47, btn48, btn49, btn50, btn51, btn52, btn53)
 
         bot.send_message(call.message.chat.id, 'Выберете персонажа:', reply_markup=markup19)   
 
     elif call.data == 'Elan':
         markup20 = types.InlineKeyboardMarkup()
         btn54 = types.InlineKeyboardButton('🔙back', callback_data='back')
-        markup19.add(btn54)
+        markup20.add(btn54)
         bot.delete_message(call.message.chat.id, call.message.message_id)
         media = [telebot.types.InputMediaPhoto(open('Elan1.jpg', 'rb')),
         telebot.types.InputMediaPhoto(open('Elan2.jpg', 'rb')),
@@ -388,12 +383,93 @@ def answer(call):
         bot.send_media_group(call.message.chat.id, media)
         bot.send_message(call.message.chat.id, 'Актуальный гайд на Кокоми', reply_markup=markup29) 
 
+    elif call.data == 'electro':
+        markup30 = types.InlineKeyboardMarkup()
+        btn64 = types.InlineKeyboardButton('🔙back', callback_data = 'back')
+        markup30.add(btn64)
+        bot.delete_message(call.message.chat.id, call.message.message_id)
+        btn65 = types.InlineKeyboardButton('Райден', callback_data = 'Ei')
+        btn66 = types.InlineKeyboardButton('Яэ Мико', callback_data = 'Miko')
+        btn67 = types.InlineKeyboardButton('Клоринда', callback_data ='Klorinda')
+        btn68 = types.InlineKeyboardButton('Сайно', callback_data = 'Saino')
+        btn69 = types.InlineKeyboardButton('Кэ Цин', callback_data = 'Keka')
+        markup30.add(btn65, btn66, btn67, btn68, btn69)
+
+        bot.send_message(call.message.chat.id, 'Выберите персонажа:', reply_markup=markup30)
+
+    elif call.data == 'Ei':
+        markup31 = types.InlineKeyboardMarkup()
+        btn70 = types.InlineKeyboardButton('🔙back', callback_data = 'back')
+        markup31.add(btn70)
+        bot.delete_message(call.message.chat.id, call.message.message_id)
+        media = [telebot.types.InputMediaPhoto(open('Ei.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Ei2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Ei3.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Ei4.jpg', 'rb'))]
+        bot.send_media_group(call.message.chat.id, media)
+        bot.send_message(call.message.chat.id, 'Актуальный гайд на Райден', reply_markup=markup31)
+    
+    elif call.data == 'Miko':
+        markup32 = types.InlineKeyboardMarkup()
+        btn71 = types.InlineKeyboardButton('🔙back', callback_data = 'back')
+        markup32.add(btn71)
+        bot.delete_message(call.message.chat.id, call.message.message_id)
+        media = [telebot.types.InputMediaPhoto(open('Miko1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Miko2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Miko3.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Miko4.jpg', 'rb'))]
+        bot.send_media_group(call.message.chat.id, media)
+        bot.send_message(call.message.chat.id, 'Актуальный гайд на Мико', reply_markup=markup32)
+
+    elif call.data == 'Klorinda':
+        markup33 = types.InlineKeyboardMarkup()
+        btn72 = types.InlineKeyboardButton('🔙back', callback_data = 'back')
+        markup33.add(btn72)
+        bot.delete_message(call.message.chat.id, call.message.message_id)
+        media = [telebot.types.InputMediaPhoto(open('Klorinda1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Klorinda2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Klorinda3.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Klorinda4.jpg', 'rb'))]
+        bot.send_media_group(call.message.chat.id, media)
+        bot.send_message(call.message.chat.id, 'Актуальный гайд на Клоринда', reply_markup=markup33)
+    
+    elif call.data == 'Saino':
+        markup34 = types.InlineKeyboardMarkup()
+        btn73 = types.InlineKeyboardButton('🔙back', callback_data = 'back')
+        markup34.add(btn73)
+        bot.delete_message(call.message.chat.id, call.message.message_id)
+        media = [telebot.types.InputMediaPhoto(open('Saino1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Saino2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Saino3.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Saino4.jpg', 'rb'))]
+        bot.send_media_group(call.message.chat.id, media)
+        bot.send_message(call.message.chat.id, 'Актуальный гайд на Сайно', reply_markup=markup34)
+
+    elif call.data == 'Keka':
+        markup35 = types.InlineKeyboardMarkup()
+        btn74 = types.InlineKeyboardButton('🔙back', callback_data = 'back')
+        markup35.add(btn74)
+        bot.delete_message(call.message.chat.id, call.message.message_id)
+        media = [telebot.types.InputMediaPhoto(open('Keka1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Keka2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Keka3.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Keka4.jpg', 'rb'))]
+        bot.send_media_group(call.message.chat.id, media)
+    
+    
+
+        
+
+        
+    
 
 
 
 
-def init_storage(user_id):
-    storage[user_id] = dict(attempt=None, random_digit=None)
+
+
+
+
 
 def set_data_storage(user_id, key, value):
     storage[user_id][key] = value
