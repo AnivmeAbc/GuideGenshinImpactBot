@@ -671,6 +671,329 @@ def answer(call):
         По этой причине она не любит свой Глаз Бога, поскольку окружающие приписывают все ее достижения именно ему.
         Место сбора ресурсов - Ли Юэ.
         ''', reply_markup=markup35)
+
+    elif call.data == 'geo':
+        markup36 = types.InlineKeyboardMarkup()
+        btn76 = types.InlineKeyboardButton('Навия', callback_data = 'Navia')
+        btn77 = types.InlineKeyboardButton('Чжун Ли', callback_data = 'Ded')
+        btn78 = types.InlineKeyboardButton('Альбедо', callback_data ='Albedo')
+        btn79 = types.InlineKeyboardButton('Итто', callback_data = 'Itto')
+        btn80 = types.InlineKeyboardButton('Шилонен', callback_data = 'Shilo')
+        btn81 = types.InlineKeyboardButton('Тиори', callback_data = 'Tiori')
+        markup36.add(btn75, btn76, btn77, btn78, btn79, btn80, btn81)
+        btn75 = types.InlineKeyboardButton('🔙back', callback_data = 'back')
+        bot.send_message(call.message.chat.id, 'Выберите персонажа:', reply_markup=markup36)
+
+    elif call.data == 'Navia':
+        markup37 = types.InlineKeyboardMarkup()
+        btn82 = types.InlineKeyboardButton('🔙back', callback_data = 'back_sbor')
+        markup37.add(btn82)
+        bot.delete_message(call.message.chat.id, call.message.message_id)
+        media = [telebot.types.InputMediaPhoto(open('Navia1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Navia2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Navia3.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Navia4.jpg', 'rb'))]
+        bot.send_media_group(call.message.chat.id, media)
+        bot.send_message(call.message.chat.id, '''
+        
+        
+        ''', reply_markup = markup37)
+
+    elif call.data == 'Ded':
+        markup38 = types.InlineKeyboardMarkup()
+        btn83 = types.InlineKeyboardButton('🔙back', callback_data = 'back_sbor')
+        markup38.add(btn83)
+        bot.delete_message(call.message.chat.id, call.message.message_id)
+        media = [telebot.types.InputMediaPhoto(open('Ded1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Ded2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Ded3.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Ded4.jpg', 'rb'))]
+        bot.send_media_group(call.message.chat.id, media)
+        bot.send_message(call.message.chat.id, '''
+        
+        
+        ''', reply_markup = markup38)
+
+    elif call.data == 'Albedo':
+        markup39 = types.InlineKeyboardMarkup()
+        btn84 = types.InlineKeyboardButton('🔙back', callback_data = 'back_sbor')
+        markup39.add(btn84)
+        bot.delete_message(call.message.chat.id, call.message.message_id)
+        media = [telebot.types.InputMediaPhoto(open('Albedo1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Albedo2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Albedo3.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Albedo4.jpg', 'rb'))]
+        bot.send_media_group(call.message.chat.id, media)
+        bot.send_message(call.message.chat.id, '''
+        
+        
+        ''', reply_markup = markup39)
+
+    elif call.data == 'Itto':
+        markup40 = types.InlineKeyboardMarkup()
+        btn85 = types.InlineKeyboardButton('🔙back', callback_data = 'back_sbor')
+        markup40.add(btn85)
+        bot.delete_message(call.message.chat.id, call.message.message_id)
+        media = [telebot.types.InputMediaPhoto(open('Itto1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Itto2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Itto3.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Itto4.jpg', 'rb'))]
+        bot.send_media_group(call.message.chat.id, media)
+        bot.send_message(call.message.chat.id, '''
+        
+        
+        ''', reply_markup = markup40)
+    
+    elif call.data == 'Shilo':
+        markup41 = types.InlineKeyboardMarkup()
+        btn86 = types.InlineKeyboardButton('🔙back', callback_data = 'back_sbor')
+        markup41.add(btn86)
+        bot.delete_message(call.message.chat.id, call.message.message_id)
+        media = [telebot.types.InputMediaPhoto(open('Shilo1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Shilo2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Shilo3.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Shilo4.jpg', 'rb'))]
+        bot.send_media_group(call.message.chat.id, media)
+        bot.send_message(call.message.chat.id, '''
+        
+        
+        ''', reply_markup = markup41)
+
+    elif call.data == 'Tiori':
+        markup42 = types.InlineKeyboardMarkup()
+        btn87 = types.InlineKeyboardButton('🔙back', callback_data = 'back_sbor')
+        markup42.add(btn87)
+        bot.delete_message(call.message.chat.id, call.message.message_id)
+        media = [telebot.types.InputMediaPhoto(open('Tiori1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Tiori2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Tiori3.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Tiori4.jpg', 'rb'))]
+        bot.send_media_group(call.message.chat.id, media)
+        bot.send_message(call.message.chat.id, '''
+        
+        
+        ''', reply_markup = markup42)
+    
+    elif call.data == 'anemo':
+        markup43 = types.InlineKeyboardMarkup()
+        btn89 = types.InlineKeyboardButton('Часка', callback_data = 'Chaska')
+        btn90 = types.InlineKeyboardButton('Синь Юнь', callback_data = 'SinYun')
+        btn91 = types.InlineKeyboardButton('Странник', callback_data = 'Strannik')
+        btn92 = types.InlineKeyboardButton('Кадзуха', callback_data = 'Kadzyxa')
+        btn93 = types.InlineKeyboardButton('Сяо', callback_data = 'Xiao')
+        btn94 = types.InlineKeyboardButton('Джин', callback_data = 'Jean')
+        btn95 = types.InlineKeyboardButton('Венти', callback_data = 'Venti')
+        markup43.add(btn88, btn89, btn90, btn91, btn92, btn93, btn94, btn95)
+        btn88 = types.InlineKeyboardButton('🔙back', callback_data = 'back')
+        bot.send_message(call.message.chat.id, 'Выберите персонажа:', reply_markup=markup36)
+    
+    elif call.data == 'Chaska':
+        markup44 = types.InlineKeyboardMarkup()
+        btn96 = types.InlineKeyboardButton('🔙back', callback_data = 'back_sbor')
+        markup44.add(btn96)
+        bot.delete_message(call.message.chat.id, call.message.message_id)
+        media = [telebot.types.InputMediaPhoto(open('Chaska1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Chaska2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Chaska3.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Chaska4.jpg', 'rb'))]
+        bot.send_media_group(call.message.chat.id, media)
+        bot.send_message(call.message.chat.id, '''
+        
+        
+        ''', reply_markup = markup44)
+
+    elif call.data == 'SinYun':
+        markup45 = types.InlineKeyboardMarkup()
+        btn97 = types.InlineKeyboardButton('🔙back', callback_data = 'back_sbor')
+        markup45.add(btn97)
+        bot.delete_message(call.message.chat.id, call.message.message_id)
+        media = [telebot.types.InputMediaPhoto(open('SinYun1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('SinYun2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('SinYun3.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('SinYun4.jpg', 'rb'))]
+        bot.send_media_group(call.message.chat.id, media)
+        bot.send_message(call.message.chat.id, '''
+        
+        
+        ''', reply_markup = markup45)
+
+    elif call.data == 'Strannik':
+        markup46 = types.InlineKeyboardMarkup()
+        btn98 = types.InlineKeyboardButton('�🔙back', callback_data = 'back_sbor')
+        markup46.add(btn98)
+        bot.delete_message(call.message.chat.id, call.message.message_id)
+        media = [telebot.types.InputMediaPhoto(open('Strannik1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Strannik2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Strannik3.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Strannik4.jpg', 'rb'))]
+        bot.send_media_group(call.message.chat.id, media)
+        bot.send_message(call.message.chat.id, '''
+        
+        
+        ''', reply_markup = markup46)
+
+    elif call.data == 'Kadzyxa':
+        markup47 = types.InlineKeyboardMarkup()
+        btn99 = types.InlineKeyboardButton('🔙back', callback_data = 'back_sbor')
+        markup47.add(btn99)
+        bot.delete_message(call.message.chat.id, call.message.message_id)
+        media = [telebot.types.InputMediaPhoto(open('Kadzyxa1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Kadzyxa2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Kadzyxa3.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Kadzyxa4.jpg', 'rb'))]
+        bot.send_media_group(call.message.chat.id, media)
+        bot.send_message(call.message.chat.id, '''
+        
+        
+        ''', reply_markup = markup47)
+
+    elif call.data == 'Xiao':
+        markup48 = types.InlineKeyboardMarkup()
+        btn100 = types.InlineKeyboardButton('🔙back', callback_data = 'back_sbor')
+        markup48.add(btn100)
+        bot.delete_message(call.message.chat.id, call.message.message_id)
+        media = [telebot.types.InputMediaPhoto(open('Xiao1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Xiao2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Xiao3.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Xiao4.jpg', 'rb'))]
+        bot.send_media_group(call.message.chat.id, media)
+        bot.send_message(call.message.chat.id, '''
+        
+        
+        ''', reply_markup = markup48)
+
+    elif call.data == 'Jean':
+        markup49 = types.InlineKeyboardMarkup()
+        btn101 = types.InlineKeyboardButton('🔙back', callback_data = 'back_sbor')
+        markup49.add(btn101)
+        bot.delete_message(call.message.chat.id, call.message.message_id)
+        media = [telebot.types.InputMediaPhoto(open('Jean1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Jean2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Jean3.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Jean4.jpg', 'rb'))]
+        bot.send_media_group(call.message.chat.id, media)
+        bot.send_message(call.message.chat.id, '''
+        
+        
+        ''', reply_markup = markup49)
+
+    elif call.data == 'Venti':
+        markup50 = types.InlineKeyboardMarkup()
+        btn102 = types.InlineKeyboardButton('🔙back', callback_data = 'back_sbor')
+        markup50.add(btn102)
+        bot.delete_message(call.message.chat.id, call.message.message_id)
+        media = [telebot.types.InputMediaPhoto(open('Venti1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Venti2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Venti3.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Venti4.jpg', 'rb'))]
+        bot.send_media_group(call.message.chat.id, media)
+        bot.send_message(call.message.chat.id, '''
+        
+        
+        ''', reply_markup = markup50)
+
+    elif call.data == 'dendro':
+        markup51 = types.InlineKeyboardMarkup()
+        btn104 = types.InlineKeyboardButton('Нахида', callback_data = 'Naxida')
+        btn105 = types.InlineKeyboardButton('Кинич', callback_data = 'Kinich')
+        btn106 = types.InlineKeyboardButton('Эмилия', callback_data = 'Emilia')
+        btn107 = types.InlineKeyboardButton('Аль Хайтам', callback_data = 'Xaitam')
+        btn108 = types.InlineKeyboardButton('Тигнари', callback_data = 'Tignari')
+        btn109 = types.InlineKeyboardButton('Бай Джу', callback_data = 'BaiZhy')
+        btn103 = types.InlineKeyboardButton('🔙back', callback_data = 'back')
+        markup51.add(btn104, btn105, btn106, btn107, btn108, btn109, btn103)
+        bot.delete_message(call.message.chat.id, call.message.message_id)
+        bot.send_message(call.message.chat.id, 'Выбери персонажа:', reply_markup = markup51)
+
+    elif call.data == 'Naxida':
+        markup52 = types.InlineKeyboardMarkup()
+        btn110 = types.InlineKeyboardButton('🔙back', callback_data = 'back_sbor')
+        markup52.add(btn110)
+        bot.delete_message(call.message.chat.id, call.message.message_id)
+        media = [telebot.types.InputMediaPhoto(open('Naxida1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Naxida2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Naxida3.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Naxida4.jpg', 'rb'))]
+        bot.send_media_group(call.message.chat.id, media)
+        bot.send_message(call.message.chat.id, '''
+        
+        
+        ''', reply_markup = markup52)
+    
+    elif call.data == 'Kinich':
+        markup53 = types.InlineKeyboardMarkup()
+        btn111 = types.InlineKeyboardButton('🔙back', callback_data = 'back_sbor')
+        markup53.add(btn111)
+        bot.delete_message(call.message.chat.id, call.message.message_id)
+        media = [telebot.types.InputMediaPhoto(open('Kinich1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Kinich2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Kinich3.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Kinich4.jpg', 'rb'))]
+        bot.send_media_group(call.message.chat.id, media)
+        bot.send_message(call.message.chat.id, '''
+        
+        
+        ''', reply_markup = markup53)
+
+    elif call.data == 'Emilia':
+        markup54 = types.InlineKeyboardMarkup()
+        btn112 = types.InlineKeyboardButton('🔙back', callback_data = 'back_sbor')
+        markup54.add(btn112)
+        bot.delete_message(call.message.chat.id, call.message.message_id)
+        media = [telebot.types.InputMediaPhoto(open('Emilia1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Emilia2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Emilia3.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Emilia4.jpg', 'rb'))]
+        bot.send_media_group(call.message.chat.id, media)
+        bot.send_message(call.message.chat.id, '''
+        
+        
+        ''', reply_markup = markup54)
+    
+    elif call.data == 'Xaitam':
+        markup55 = types.InlineKeyboardMarkup()
+        btn113 = types.InlineKeyboardButton('🔙back', callback_data = 'back_sbor')
+        markup55.add(btn113)
+        bot.delete_message(call.message.chat.id, call.message.message_id)
+        media = [telebot.types.InputMediaPhoto(open('Xaitam1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Xaitam2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Xaitam3.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Xaitam4.jpg', 'rb'))]
+        bot.send_media_group(call.message.chat.id, media)
+        bot.send_message(call.message.chat.id, '''
+        
+        
+        ''', reply_markup = markup55)
+    
+    elif call.data == 'Tignari':
+        markup56 = types.InlineKeyboardMarkup()
+        btn114 = types.InlineKeyboardButton('🔙back', callback_data = 'back_sbor')
+        markup56.add(btn114)
+        bot.delete_message(call.message.chat.id, call.message.message_id)
+        media = [telebot.types.InputMediaPhoto(open('Tignari1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Tignari2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Tignari3.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('Tignari4.jpg', 'rb'))]
+        bot.send_media_group(call.message.chat.id, media)
+        bot.send_message(call.message.chat.id, '''
+        
+        
+        ''', reply_markup = markup56)
+    
+    elif call.data == 'BaiZhy':
+        markup57 = types.InlineKeyboardMarkup()
+        btn115 = types.InlineKeyboardButton('🔙back', callback_data = 'back_sbor')
+        markup57.add(btn115)
+        bot.delete_message(call.message.chat.id, call.message.message_id)
+        media = [telebot.types.InputMediaPhoto(open('BaiZhy1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('BaiZhy2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('BaiZhy3.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('BaiZhy4.jpg', 'rb'))]
+        bot.send_media_group(call.message.chat.id, media)
+        bot.send_message(call.message.chat.id, '''
+        
+        
+        ''', reply_markup = markup57)
     
     
 
