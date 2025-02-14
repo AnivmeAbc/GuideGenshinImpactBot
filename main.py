@@ -2,7 +2,7 @@ import telebot
 from telebot import types
 import logging
 
-BOT_API = 'YOUR_API_KEY'
+BOT_API = 'API_KEY'
 
 
 bot = telebot.TeleBot(BOT_API)
@@ -18,7 +18,7 @@ def start(message):
     btn_akasha = types.InlineKeyboardButton("Akasha", url="https://akasha.cv/")
     btn_help = types.InlineKeyboardButton('Об игре', callback_data="help")
     markup.add(bot1, bot2, btn_akasha, btn_help) 
-    file = open('превью.jpg', 'rb') 
+    file = open('pic/превью.jpg', 'rb') 
     caption = 'Привет, Путешественник! Этот бот поможет разобраться как собрать своих персонажей для F2P игры, выбери кнопку " Об игре ", чтобы ознакомиться с основами Genshin Impact. К звёздам и безднам!'
     bot.send_photo(message.chat.id, file, caption, reply_markup=markup) 
     
@@ -57,7 +57,7 @@ def answer(call):
 Появиться все больше, а также врагов. Основной сюжет заключается в том что мы ищем своего родственника, по всему Тейвату.(Ищем брата или сестру зависит от того главного героя, которого вы выбрали в начале игры)
 Ресурсы прокачки персонажей зависят от того в каком регионе он вышел.
 Также бот поможет ознакомиться порядком волн, количеством здоровья и монстрами Витой Бездны.
- Кнопка Akasha поможет ознакомиться с рейтингом вашего персонажа, вы сможете сравнить своего персонажа с персонажем другого игрока, сайт также поможет рассчитать максимально выдаваемый урон за один раз ''',
+Кнопка Akasha поможет ознакомиться с рейтингом вашего персонажа, вы сможете сравнить своего персонажа с персонажем другого игрока, сайт также поможет рассчитать максимально выдаваемый урон за один раз ''',
             reply_markup=markup_help
             )
 
@@ -66,7 +66,7 @@ def answer(call):
         btn3 = types.InlineKeyboardButton('🔙back', callback_data='back')
         markup1.add(btn3)
         bot.delete_message(call.message.chat.id, call.message.message_id)
-        file = open('бездна.jpg', 'rb')
+        file = open('pic/бездна.jpg', 'rb')
         bot.send_photo(call.message.chat.id, file)
         bot.send_message(call.message.chat.id, 'Актуальная инфрмация по бездне версии 5.3', reply_markup=markup1)        
 
@@ -88,9 +88,9 @@ def answer(call):
         btn19 = types.InlineKeyboardButton('🔙back', callback_data='back_sbor') 
         markup4.add(btn19)
         bot.delete_message(call.message.chat.id, call.message.message_id)
-        media = [telebot.types.InputMediaPhoto(open('Ayaka1.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Ayaka2.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Ayaka3.jpg', 'rb'))]
+        media = [telebot.types.InputMediaPhoto(open('pic/Ayaka1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Ayaka2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Ayaka3.jpg', 'rb'))]
         bot.send_media_group(call.message.chat.id, media)
         bot.send_message(call.message.chat.id, '''
 Аяка — крио персонаж использующий в качестве оружия одноручный меч. 
@@ -104,9 +104,9 @@ def answer(call):
         btn20 = types.InlineKeyboardButton('🔙back', callback_data='back_sbor') 
         markup5.add(btn20)
         bot.delete_message(call.message.chat.id, call.message.message_id)
-        media = [telebot.types.InputMediaPhoto(open('Eola1.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Eola2.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Eola3.jpg', 'rb'))]
+        media = [telebot.types.InputMediaPhoto(open('pic/Eola1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Eola2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Eola3.jpg', 'rb'))]
         bot.send_media_group(call.message.chat.id, media)
         bot.send_message(call.message.chat.id, '''Эола — капитан разведывательного отряда Рыцарей Фавония. 
 Эта элегантная девушка с легкостью обращается с тяжелым двуручным мечом. Ее легкие и грациозные движения больше похожи на танец, а ее Крио элементарные навыки заставляют врагов замереть в предвкушении очередного пируэта. 
@@ -117,9 +117,9 @@ def answer(call):
         btn21 = types.InlineKeyboardButton('🔙back', callback_data='back_sbor') 
         markup6.add(btn21) 
         bot.delete_message(call.message.chat.id, call.message.message_id) 
-        media = [telebot.types.InputMediaPhoto(open('ShenHe1.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('ShenHe2.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('ShenHe3.jpg', 'rb'))]
+        media = [telebot.types.InputMediaPhoto(open('pic/ShenHe1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/ShenHe2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/ShenHe3.jpg', 'rb'))]
         bot.send_media_group(call.message.chat.id, media)
         bot.send_message(call.message.chat.id, 'Шэнь Хэ — милая, но в то же время загадочная и таинственная девушка очень много времени провела с Адептами и была ученицей Хранителя облаков, а ее навыки и сила воли была высоко оценена адептами. Место сбора ресурсов - Ли Юэ. ',reply_markup=markup6)
     
@@ -128,8 +128,8 @@ def answer(call):
         btn22 = types.InlineKeyboardButton('🔙back', callback_data='back_sbor') 
         markup7.add(btn22) 
         bot.delete_message(call.message.chat.id, call.message.message_id) 
-        media =[telebot.types.InputMediaPhoto(open('Cici1.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Cici2.jpg', 'rb'))]
+        media =[telebot.types.InputMediaPhoto(open('pic/Cici1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Cici2.jpg', 'rb'))]
         bot.send_media_group(call.message.chat.id, media)
         bot.send_message(call.message.chat.id, '''Ци-ци немного отличается от остальных играбельных персонажей Геншин Импакт. 
 Дело в том, что по случайному стечению обстоятельств она погибла, и Адепты даровали ей новую жизнь в виде зомби. 
@@ -141,8 +141,8 @@ def answer(call):
         btn23 = types.InlineKeyboardButton('🔙back', callback_data='back_sbor') 
         markup8.add(btn23) 
         bot.delete_message(call.message.chat.id, call.message.message_id) 
-        media = [telebot.types.InputMediaPhoto(open('Rizli1.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Rizli2.jpg','rb'))]
+        media = [telebot.types.InputMediaPhoto(open('pic/Rizli1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Rizli2.jpg','rb'))]
         bot.send_media_group(call.message.chat.id, media)
         bot.send_message(call.message.chat.id, '''
 Ризли занимает должность управляющего подводной крепостью Меропид, где обитают изгнанные преступники. 
@@ -157,9 +157,9 @@ def answer(call):
         btn24 = types.InlineKeyboardButton('🔙back', callback_data='back_sbor') 
         markup9.add(btn24) 
         bot.delete_message(call.message.chat.id, call.message.message_id) 
-        media = [telebot.types.InputMediaPhoto(open('Koza1.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Koza2.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Koza3.jpg', 'rb'))]
+        media = [telebot.types.InputMediaPhoto(open('pic/Koza1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Koza2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Koza3.jpg', 'rb'))]
         bot.send_media_group(call.message.chat.id, media)
         bot.send_message(call.message.chat.id, '''
 Крио лучника, в основном выполняющего роль основного дамагера от заряженных выстрелов. 
@@ -176,9 +176,9 @@ def answer(call):
         markup9.add(btn25) 
         bot.delete_message(call.message.chat.id, call.message.message_id) 
         media = [telebot.types.InputMediaPhoto(open('Sitlali1.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Sitlali2.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Sitlali3.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Sitlali4.jpg', 'rb'))]
+        telebot.types.InputMediaPhoto(open('pic/Sitlali2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Sitlali3.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Sitlali4.jpg', 'rb'))]
         bot.send_media_group(call.message.chat.id, media)
         bot.send_message(call.message.chat.id,'''
 Щитовик-баффер Крио стихии, использующего в качестве оружия катализатор.
@@ -225,10 +225,10 @@ def answer(call):
         btn35 = types.InlineKeyboardButton('🔙back', callback_data='back_sbor')
         markup11.add(btn35)
         bot.delete_message(call.message.chat.id, call.message.message_id)
-        media = [telebot.types.InputMediaPhoto(open('Diluc1.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Diluc2.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Diluc3.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Diluc4.jpg', 'rb'))]
+        media = [telebot.types.InputMediaPhoto(open('pic/Diluc1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Diluc2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Diluc3.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Diluc4.jpg', 'rb'))]
         bot.send_media_group(call.message.chat.id, media)
         bot.send_message(call.message.chat.id, '''
 Персонаж, который до сих пор не покидает отряды многих игроков, поскольку способен наносить немало урона без особых условий и при минимальных вложениях. 
@@ -243,10 +243,10 @@ def answer(call):
         btn36 = types.InlineKeyboardButton('🔙back', callback_data='back_sbor')
         markup12.add(btn36)
         bot.delete_message(call.message.chat.id, call.message.message_id)
-        media = [telebot.types.InputMediaPhoto(open('Eimiya1.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Eimiya2.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Eimiya3.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Eimiya4.jpg', 'rb'))]
+        media = [telebot.types.InputMediaPhoto(open('pic/Eimiya1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Eimiya2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Eimiya3.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Eimiya4.jpg', 'rb'))]
         bot.send_media_group(call.message.chat.id, media)
         bot.send_message(call.message.chat.id, '''
 Еимия – мастер фейерверков из Инадзумы. Обладает Пиро стихией и уничтожает своих противников из лука. 
@@ -258,10 +258,10 @@ def answer(call):
         btn42 = types.InlineKeyboardButton('🔙back', callback_data='back_sbor')
         markup18.add(btn42)
         bot.delete_message(call.message.chat.id, call.message.message_id)
-        media = [telebot.types.InputMediaPhoto(open('Mavuika1.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Mavuika2.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Mavuika3.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Mavuika4.jpg', 'rb'))]
+        media = [telebot.types.InputMediaPhoto(open('pic/Mavuika1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Mavuika2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Mavuika3.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Mavuika4.jpg', 'rb'))]
         bot.send_media_group(call.message.chat.id, media)
         bot.send_message(call.message.chat.id, '''
 Пиро Архонта из Натлана, которая способна выполнять в команде одновременно роли основного и второстепенного дамагера. 
@@ -277,10 +277,10 @@ def answer(call):
         btn37 = types.InlineKeyboardButton('🔙back', callback_data='back_sbor')
         markup13.add(btn37)
         bot.delete_message(call.message.chat.id, call.message.message_id)
-        media = [telebot.types.InputMediaPhoto(open('Kli1.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Kli2.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Kli3.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Kli4.jpg', 'rb'))]
+        media = [telebot.types.InputMediaPhoto(open('pic/Kli1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Kli2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Kli3.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Kli4.jpg', 'rb'))]
         bot.send_media_group(call.message.chat.id, media)
         bot.send_message(call.message.chat.id,'''
 Кли – маленькая девочка-рыцарь из Мондштадта с пиро элементом, владеющий катализатором. 
@@ -294,10 +294,10 @@ def answer(call):
         btn38 = types.InlineKeyboardButton('🔙back', callback_data='back_sbor')
         markup14.add(btn38)
         bot.delete_message(call.message.chat.id, call.message.message_id)
-        media = [telebot.types.InputMediaPhoto(open('Arli1.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Arli2.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Arli3.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Arli4.jpg', 'rb'))]
+        media = [telebot.types.InputMediaPhoto(open('pic/Arli1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Arli2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Arli3.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Arli4.jpg', 'rb'))]
         bot.send_media_group(call.message.chat.id, media)
         bot.send_message(call.message.chat.id, '''
 Пиро копейщицу, играющую от Долга жизни. 
@@ -314,10 +314,10 @@ def answer(call):
         btn39 = types.InlineKeyboardButton('🔙back', callback_data='back_sbor')
         markup15.add(btn39)
         bot.delete_message(call.message.chat.id, call.message.message_id)
-        media = [telebot.types.InputMediaPhoto(open('Lini1.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Lini2.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Lini3.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Lini4.jpg', 'rb'))]
+        media = [telebot.types.InputMediaPhoto(open('pic/Lini1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Lini2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Lini3.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Lini4.jpg', 'rb'))]
         bot.send_media_group(call.message.chat.id, media)
         bot.send_message(call.message.chat.id, '''
 Лини – владелец лука и Пиро стихии. 
@@ -334,10 +334,10 @@ def answer(call):
         btn40 = types.InlineKeyboardButton('🔙back', callback_data='back_sbor')
         markup16.add(btn40)
         bot.delete_message(call.message.chat.id, call.message.message_id)
-        media = [telebot.types.InputMediaPhoto(open('XyTao1.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('XyTao2.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('XyTao3.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('XyTao4.jpg', 'rb'))]
+        media = [telebot.types.InputMediaPhoto(open('pic/XyTao1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/XyTao2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/XyTao3.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/XyTao4.jpg', 'rb'))]
         bot.send_media_group(call.message.chat.id, media)
         bot.send_message(call.message.chat.id, '''
 Ху Тао — управляющая ритуальным бюро «Ваншэн» в семьдесят седьмом поколении, а по совместительству атакующий Пиро персонаж с древковым оружием (копьем).
@@ -352,10 +352,10 @@ def answer(call):
         btn41 = types.InlineKeyboardButton('��back', callback_data='back_sbor')
         markup17.add(btn41)
         bot.delete_message(call.message.chat.id, call.message.message_id)
-        media = [telebot.types.InputMediaPhoto(open('Dexya1.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Dexya2.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Dexya3.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Dexya4.jpg', 'rb'))]
+        media = [telebot.types.InputMediaPhoto(open('pic/Dexya1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Dexya2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Dexya3.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Dexya4.jpg', 'rb'))]
         bot.send_media_group(call.message.chat.id, media)
         bot.send_message(call.message.chat.id, '''
 Дэхья – наемница из Пустынников по прозвищу «Пламенная Грива». 
@@ -387,10 +387,10 @@ def answer(call):
         btn54 = types.InlineKeyboardButton('🔙back', callback_data='back_sbor')
         markup20.add(btn54)
         bot.delete_message(call.message.chat.id, call.message.message_id)
-        media = [telebot.types.InputMediaPhoto(open('Elan1.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Elan2.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Elan3.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Elan4.jpg', 'rb'))]
+        media = [telebot.types.InputMediaPhoto(open('pic/Elan1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Elan2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Elan3.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Elan4.jpg', 'rb'))]
         bot.send_media_group(call.message.chat.id, media)
         bot.send_message(call.message.chat.id, '''
 Е Лань – таинственная незнакомка, состоящая в департаменте о делах граждан Ли Юэ. 
@@ -405,10 +405,10 @@ def answer(call):
         btn55 = types.InlineKeyboardButton('🔙back', callback_data='back_sbor')
         markup21.add(btn55)
         bot.delete_message(call.message.chat.id, call.message.message_id)
-        media = [telebot.types.InputMediaPhoto(open('Neva1.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Neva2.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Neva3.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Neva4.jpg', 'rb'))]
+        media = [telebot.types.InputMediaPhoto(open('pic/Neva1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Neva2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Neva3.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Neva4.jpg', 'rb'))]
         bot.send_media_group(call.message.chat.id, media)
         bot.send_message(call.message.chat.id, '''
 Невиллет – верховный судья Фонтейна. Поскольку суд в Гидро регионе имеет весьма высокое значение, его можно назвать второй фигурой после Архонта. 
@@ -422,11 +422,11 @@ def answer(call):
         btn56 = types.InlineKeyboardButton('🔙back', callback_data='back_sbor')
         markup22.add(btn56)
         bot.delete_message(call.message.chat.id, call.message.message_id)
-        media = [telebot.types.InputMediaPhoto(open('Furina1.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Furina2.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Furina3.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Furina4.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Furina5.jpg', 'rb'))]
+        media = [telebot.types.InputMediaPhoto(open('pic/Furina1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Furina2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Furina3.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Furina4.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Furina5.jpg', 'rb'))]
         bot.send_media_group(call.message.chat.id, media)
         bot.send_message(call.message.chat.id, '''
 Фурина, Гидро Архонт Фонтейна (Фокалорс) – персонаж, владеющий Гидро стихией и использующий одноручный меч в качестве оружия.
@@ -441,10 +441,10 @@ def answer(call):
         btn57 = types.InlineKeyboardButton('🔙back', callback_data='back_sbor')
         markup23.add(btn57)
         bot.delete_message(call.message.chat.id, call.message.message_id)
-        media = [telebot.types.InputMediaPhoto(open('Chaild1.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Chaild2.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Chaild3.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Chaild4.jpg', 'rb'))]
+        media = [telebot.types.InputMediaPhoto(open('pic/Chaild1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Chaild2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Chaild3.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Chaild4.jpg', 'rb'))]
         bot.send_media_group(call.message.chat.id, media)
         bot.send_message(call.message.chat.id, '''
 Лучника Гидро стихии с особой стойкой, где он преобразует свое оружие в кинжалы. 
@@ -461,10 +461,10 @@ def answer(call):
         btn58 = types.InlineKeyboardButton('🔙back', callback_data='back_sbor')
         markup24.add(btn58)
         bot.delete_message(call.message.chat.id, call.message.message_id)
-        media = [telebot.types.InputMediaPhoto(open('Nily1.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Nily2.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Nily3.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Nily4.jpg', 'rb'))]
+        media = [telebot.types.InputMediaPhoto(open('pic/Nily1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Nily2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Nily3.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Nily4.jpg', 'rb'))]
         bot.send_media_group(call.message.chat.id, media)
         bot.send_message(call.message.chat.id, '''
 Нилу – танцовщица из Сумеру, мастерство движений которой способно отправить любого зрителя в сказочные миры. 
@@ -479,10 +479,10 @@ def answer(call):
         btn59 = types.InlineKeyboardButton('🔙back', callback_data='back_sbor')
         markup25.add(btn59)
         bot.delete_message(call.message.chat.id, call.message.message_id)
-        media = [telebot.types.InputMediaPhoto(open('Mona1.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Mona2.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Mona3.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Mona4.jpg', 'rb'))]
+        media = [telebot.types.InputMediaPhoto(open('pic/Mona1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Mona2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Mona3.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Mona4.jpg', 'rb'))]
         bot.send_media_group(call.message.chat.id, media)
         bot.send_message(call.message.chat.id, '''
 Мона — Гидро каталист легендарной редкости. 
@@ -497,9 +497,9 @@ def answer(call):
         btn60 = types.InlineKeyboardButton('🔙back', callback_data='back_sbor')
         markup26.add(btn60)
         bot.delete_message(call.message.chat.id, call.message.message_id)
-        media = [telebot.types.InputMediaPhoto(open('Sidzvin1.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Sidzvin2.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Sidzvin3.jpg', 'rb'))]
+        media = [telebot.types.InputMediaPhoto(open('pic/Sidzvin1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Sidzvin2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Sidzvin3.jpg', 'rb'))]
         bot.send_media_group(call.message.chat.id, media)
         bot.send_message(call.message.chat.id, '''
 Сиджвин — представительница молодой расы мелюзин, работающая врачом в месте заключения осужденных преступников, Крепости Меропид. 
@@ -513,11 +513,11 @@ def answer(call):
         btn61 = types.InlineKeyboardButton('🔙back', callback_data='back_sbor')
         markup27.add(btn61)
         bot.delete_message(call.message.chat.id, call.message.message_id)
-        media = [telebot.types.InputMediaPhoto(open('Ayato1.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Ayato2.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Ayato3.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Ayato4.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Ayato5.jpg', 'rb'))]
+        media = [telebot.types.InputMediaPhoto(open('pic/Ayato1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Ayato2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Ayato3.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Ayato4.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Ayato5.jpg', 'rb'))]
         bot.send_media_group(call.message.chat.id, media)
         bot.send_message(call.message.chat.id, '''
 Камисато Аято – старший брат Аяки и благородный глава одноименного клана, который не любит появляться на публике, но стремится поддерживать процветание и стабильность региона. 
@@ -531,10 +531,10 @@ def answer(call):
         btn62 = types.InlineKeyboardButton('🔙back', callback_data='back_sbor')
         markup28.add(btn62)
         bot.delete_message(call.message.chat.id, call.message.message_id)
-        media = [telebot.types.InputMediaPhoto(open('Mualani1.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Mualani2.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Mualani3.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Mualani4.jpg', 'rb'))]
+        media = [telebot.types.InputMediaPhoto(open('pic/Mualani1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Mualani2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Mualani3.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Mualani4.jpg', 'rb'))]
         bot.send_media_group(call.message.chat.id, media)
         bot.send_message(call.message.chat.id, '''
 Муалани — проводник из Народа Родников, одного из племён, проживающих в Натлане. 
@@ -549,13 +549,13 @@ def answer(call):
         btn63 = types.InlineKeyboardButton('🔙back', callback_data='back_sbor')
         markup29.add(btn63)
         bot.delete_message(call.message.chat.id, call.message.message_id)
-        media = [telebot.types.InputMediaPhoto(open('Kokomi1.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Kokomi2.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Kokomi3.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Kokomi4.jpg', 'rb'))]
+        media = [telebot.types.InputMediaPhoto(open('pic/Kokomi1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Kokomi2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Kokomi3.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Kokomi4.jpg', 'rb'))]
         bot.send_media_group(call.message.chat.id, media)
         bot.send_message(call.message.chat.id, '''
-Сангономия Кокоми – Божественная жрица и играбельный 5⭐ персонаж из Инадзумы. 
+Сангономия Кокоми – Божественная жрица и играбельный персонаж из Инадзумы. 
 Владеет катализатором и Гидро Глазом Бога. 
 Будучи главой острова Ватацуми, девушка очень интересуется политикой и дипломатией. 
 Она достигла мастерства в области военного искусства и имеет репутацию гения-тактика.
@@ -581,10 +581,10 @@ def answer(call):
         btn70 = types.InlineKeyboardButton('🔙back', callback_data = 'back_sbor')
         markup31.add(btn70)
         bot.delete_message(call.message.chat.id, call.message.message_id)
-        media = [telebot.types.InputMediaPhoto(open('Raiden1.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Raiden2.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Raiden3.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Raiden4.jpg', 'rb'))]
+        media = [telebot.types.InputMediaPhoto(open('pic/Raiden1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Raiden2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Raiden3.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Raiden4.jpg', 'rb'))]
         bot.send_media_group(call.message.chat.id, media)
         bot.send_message(call.message.chat.id, '''
 Электро дамагера, который наносит высокий урон в стойке и имеет саппортскую способность к восстановлению энергии. 
@@ -599,10 +599,10 @@ def answer(call):
         btn71 = types.InlineKeyboardButton('🔙back', callback_data = 'back_sbor')
         markup32.add(btn71)
         bot.delete_message(call.message.chat.id, call.message.message_id)
-        media = [telebot.types.InputMediaPhoto(open('Miko1.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Miko2.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Miko3.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Miko4.jpg', 'rb'))]
+        media = [telebot.types.InputMediaPhoto(open('pic/Miko1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Miko2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Miko3.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Miko4.jpg', 'rb'))]
         bot.send_media_group(call.message.chat.id, media)
         bot.send_message(call.message.chat.id, '''
 Яэ Мико – верховная жрица Великого храма Наруками, потомок рода Кицунэ, фамильяр Электро Архонта и главный редактор издательского дома Яэ. 
@@ -617,10 +617,10 @@ def answer(call):
         btn72 = types.InlineKeyboardButton('🔙back', callback_data = 'back_sbor')
         markup33.add(btn72)
         bot.delete_message(call.message.chat.id, call.message.message_id)
-        media = [telebot.types.InputMediaPhoto(open('Klorinda1.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Klorinda2.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Klorinda3.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Klorinda4.jpg', 'rb'))]
+        media = [telebot.types.InputMediaPhoto(open('pic/Klorinda1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Klorinda2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Klorinda3.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Klorinda4.jpg', 'rb'))]
         bot.send_media_group(call.message.chat.id, media)
         bot.send_message(call.message.chat.id, '''
 Основной дамагер Электро стихии, который преобразовывает получаемое лечение в Долг жизни. 
@@ -638,10 +638,10 @@ def answer(call):
         btn73 = types.InlineKeyboardButton('🔙back', callback_data = 'back_sbor')
         markup34.add(btn73)
         bot.delete_message(call.message.chat.id, call.message.message_id)
-        media = [telebot.types.InputMediaPhoto(open('Saino1.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Saino2.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Saino3.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Saino4.jpg', 'rb'))]
+        media = [telebot.types.InputMediaPhoto(open('pic/Saino1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Saino2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Saino3.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Saino4.jpg', 'rb'))]
         bot.send_media_group(call.message.chat.id, media)
         bot.send_message(call.message.chat.id, '''
 Сайно – играбельный Электро персонаж. 
@@ -655,10 +655,10 @@ def answer(call):
         btn74 = types.InlineKeyboardButton('🔙back', callback_data = 'back_sbor')
         markup35.add(btn74)
         bot.delete_message(call.message.chat.id, call.message.message_id)
-        media = [telebot.types.InputMediaPhoto(open('Keka1.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Keka2.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Keka3.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Keka4.jpg', 'rb'))]
+        media = [telebot.types.InputMediaPhoto(open('pic/Keka1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Keka2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Keka3.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Keka4.jpg', 'rb'))]
         bot.send_media_group(call.message.chat.id, media)
         bot.send_message(call.message.chat.id, '''
 Электро дамагера с одноручным мечом. Героиня использует элементальный навык для создания элементальной инфузии на своих обычных и заряженных атаках, а основной урон наносит с руки и взрыва стихий.
@@ -687,9 +687,9 @@ def answer(call):
         btn82 = types.InlineKeyboardButton('🔙back', callback_data = 'back_sbor')
         markup37.add(btn82)
         bot.delete_message(call.message.chat.id, call.message.message_id)
-        media = [telebot.types.InputMediaPhoto(open('Navia1.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Navia2.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Navia3.jpg', 'rb')),]
+        media = [telebot.types.InputMediaPhoto(open('pic/Navia1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Navia2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Navia3.jpg', 'rb')),]
         bot.send_media_group(call.message.chat.id, media)
         bot.send_message(call.message.chat.id, '''
 Навия – легендарный персонаж, владеющий двуручным мечом и Гео стихией.
@@ -704,9 +704,9 @@ def answer(call):
         btn83 = types.InlineKeyboardButton('🔙back', callback_data = 'back_sbor')
         markup38.add(btn83)
         bot.delete_message(call.message.chat.id, call.message.message_id)
-        media = [telebot.types.InputMediaPhoto(open('Ded1.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Ded2.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Ded3.jpg', 'rb')),]
+        media = [telebot.types.InputMediaPhoto(open('pic/Ded1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Ded2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Ded3.jpg', 'rb')),]
         bot.send_media_group(call.message.chat.id, media)
         bot.send_message(call.message.chat.id, '''
 Чжун Ли — это персонаж, который представляется консультантом ритуального бюро «Ваншэн», но на самом деле является Гео Архонтом. 
@@ -720,9 +720,9 @@ def answer(call):
         btn84 = types.InlineKeyboardButton('🔙back', callback_data = 'back_sbor')
         markup39.add(btn84)
         bot.delete_message(call.message.chat.id, call.message.message_id)
-        media = [telebot.types.InputMediaPhoto(open('Albedo1.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Albedo2.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Albedo3.jpg', 'rb')),]
+        media = [telebot.types.InputMediaPhoto(open('pic/Albedo1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Albedo2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Albedo3.jpg', 'rb')),]
         bot.send_media_group(call.message.chat.id, media)
         bot.send_message(call.message.chat.id, '''
 Альбедо – гениальный алхимик с одноручным мечом и Гео Глазом Бога из Мондштадта, служащий в Ордо Фавониус. 
@@ -736,9 +736,9 @@ def answer(call):
         btn85 = types.InlineKeyboardButton('🔙back', callback_data = 'back_sbor')
         markup40.add(btn85)
         bot.delete_message(call.message.chat.id, call.message.message_id)
-        media = [telebot.types.InputMediaPhoto(open('Itto1.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Itto2.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Itto3.jpg', 'rb')),]
+        media = [telebot.types.InputMediaPhoto(open('pic/Itto1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Itto2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Itto3.jpg', 'rb')),]
         bot.send_media_group(call.message.chat.id, media)
         bot.send_message(call.message.chat.id, '''
 Итто – Гео персонаж, владеющий двуручным мечом. 
@@ -753,9 +753,9 @@ def answer(call):
         btn86 = types.InlineKeyboardButton('🔙back', callback_data = 'back_sbor')
         markup41.add(btn86)
         bot.delete_message(call.message.chat.id, call.message.message_id)
-        media = [telebot.types.InputMediaPhoto(open('Shilo1.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Shilo2.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Shilo3.jpg', 'rb')),]
+        media = [telebot.types.InputMediaPhoto(open('pic/Shilo1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Shilo2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Shilo3.jpg', 'rb')),]
         bot.send_media_group(call.message.chat.id, media)
         bot.send_message(call.message.chat.id, '''
 Шилонен — кузнец из Нанацкайана, известная тем, что никогда не возьмется за дело до того, как узнает все подробности о предстоящей работе. 
@@ -770,9 +770,9 @@ def answer(call):
         btn87 = types.InlineKeyboardButton('🔙back', callback_data = 'back_sbor')
         markup42.add(btn87)
         bot.delete_message(call.message.chat.id, call.message.message_id)
-        media = [telebot.types.InputMediaPhoto(open('Tiori1.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Tiori2.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Tiori3.jpg', 'rb')),]
+        media = [telebot.types.InputMediaPhoto(open('pic/Tiori1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Tiori2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Tiori3.jpg', 'rb')),]
         bot.send_media_group(call.message.chat.id, media)
         bot.send_message(call.message.chat.id, '''
 Тиори – дизайнер одежды из Инадзумы, которая перебралась в Гидро регион, где в районе Лионез открыла собственный магазин под названием «Дом Тиори». 
@@ -800,9 +800,9 @@ def answer(call):
         btn96 = types.InlineKeyboardButton('🔙back', callback_data = 'back_sbor')
         markup44.add(btn96)
         bot.delete_message(call.message.chat.id, call.message.message_id)
-        media = [telebot.types.InputMediaPhoto(open('Chaska1.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Chaska2.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Chaska3.jpg', 'rb')),]
+        media = [telebot.types.InputMediaPhoto(open('pic/Chaska1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Chaska2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Chaska3.jpg', 'rb')),]
         bot.send_media_group(call.message.chat.id, media)
         bot.send_message(call.message.chat.id, '''
 Часка — миротворец из клана Цветочного пера в Натлане. 
@@ -816,9 +816,9 @@ def answer(call):
         btn97 = types.InlineKeyboardButton('🔙back', callback_data = 'back_sbor')
         markup45.add(btn97)
         bot.delete_message(call.message.chat.id, call.message.message_id)
-        media = [telebot.types.InputMediaPhoto(open('SinYun1.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('SinYun2.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('SinYun3.jpg', 'rb')),]
+        media = [telebot.types.InputMediaPhoto(open('pic/SinYun1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/SinYun2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/SinYun3.jpg', 'rb')),]
         bot.send_media_group(call.message.chat.id, media)
         bot.send_message(call.message.chat.id, '''
 Сянь Юнь – мудрый Адепт, которая известна как Хранитель Облаков. 
@@ -833,9 +833,9 @@ def answer(call):
         btn98 = types.InlineKeyboardButton('�🔙back', callback_data = 'back_sbor')
         markup46.add(btn98)
         bot.delete_message(call.message.chat.id, call.message.message_id)
-        media = [telebot.types.InputMediaPhoto(open('Strannik1.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Strannik2.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Strannik3.jpg', 'rb')),]
+        media = [telebot.types.InputMediaPhoto(open('pic/Strannik1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Strannik2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Strannik3.jpg', 'rb')),]
         bot.send_media_group(call.message.chat.id, media)
         bot.send_message(call.message.chat.id, '''
 Странник (Скарамучча) – бывший Предвестник Фатуи и затерявшийся в вечности сосуд, обретший собственную волю. 
@@ -849,9 +849,9 @@ def answer(call):
         btn99 = types.InlineKeyboardButton('🔙back', callback_data = 'back_sbor')
         markup47.add(btn99)
         bot.delete_message(call.message.chat.id, call.message.message_id)
-        media = [telebot.types.InputMediaPhoto(open('Kadzyxa1.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Kadzyxa2.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Kadzyxa3.jpg', 'rb')),]
+        media = [telebot.types.InputMediaPhoto(open('pic/Kadzyxa1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Kadzyxa2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Kadzyxa3.jpg', 'rb')),]
         bot.send_media_group(call.message.chat.id, media)
         bot.send_message(call.message.chat.id, '''
 Каэдэхара Кадзуха – странствующий самурай-ронин из Инадзумы. 
@@ -866,9 +866,9 @@ def answer(call):
         btn100 = types.InlineKeyboardButton('🔙back', callback_data = 'back_sbor')
         markup48.add(btn100)
         bot.delete_message(call.message.chat.id, call.message.message_id)
-        media = [telebot.types.InputMediaPhoto(open('Xiao1.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Xiao2.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Xiao3.jpg', 'rb')),]
+        media = [telebot.types.InputMediaPhoto(open('pic/Xiao1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Xiao2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Xiao3.jpg', 'rb')),]
         bot.send_media_group(call.message.chat.id, media)
         bot.send_message(call.message.chat.id, '''
 Сяо — Адепт из Ли Юэ, а также последний из пяти защитников Якс. 
@@ -882,9 +882,9 @@ def answer(call):
         btn101 = types.InlineKeyboardButton('🔙back', callback_data = 'back_sbor')
         markup49.add(btn101)
         bot.delete_message(call.message.chat.id, call.message.message_id)
-        media = [telebot.types.InputMediaPhoto(open('Jean1.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Jean2.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Jean3.jpg', 'rb')),]
+        media = [telebot.types.InputMediaPhoto(open('pic/Jean1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Jean2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Jean3.jpg', 'rb')),]
         bot.send_media_group(call.message.chat.id, media)
         bot.send_message(call.message.chat.id, '''
 Джинн – является действующим магистром Ордо Фавониус. 
@@ -898,9 +898,9 @@ def answer(call):
         btn102 = types.InlineKeyboardButton('🔙back', callback_data = 'back_sbor')
         markup50.add(btn102)
         bot.delete_message(call.message.chat.id, call.message.message_id)
-        media = [telebot.types.InputMediaPhoto(open('Venti1.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Venti2.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Venti3.jpg', 'rb')),]
+        media = [telebot.types.InputMediaPhoto(open('pic/venti1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/venti2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Venti3.jpg', 'rb')),]
         bot.send_media_group(call.message.chat.id, media)
         bot.send_message(call.message.chat.id, '''
 Венти – Анемо Архонт из Мондштадта, живущий под видом простого барда. 
@@ -928,9 +928,9 @@ def answer(call):
         btn110 = types.InlineKeyboardButton('🔙back', callback_data = 'back_sbor')
         markup52.add(btn110)
         bot.delete_message(call.message.chat.id, call.message.message_id)
-        media = [telebot.types.InputMediaPhoto(open('Naxida1.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Naxida2.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Naxida3.jpg', 'rb')),]
+        media = [telebot.types.InputMediaPhoto(open('pic/Naxida1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Naxida2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Naxida3.jpg', 'rb')),]
         bot.send_media_group(call.message.chat.id, media)
         bot.send_message(call.message.chat.id, '''
 Нахида, Дендро-Архонт мудрости Сумеру – малая властительница Кусанали мудра, добра и очень любит людей. 
@@ -943,9 +943,9 @@ def answer(call):
         btn111 = types.InlineKeyboardButton('🔙back', callback_data = 'back_sbor')
         markup53.add(btn111)
         bot.delete_message(call.message.chat.id, call.message.message_id)
-        media = [telebot.types.InputMediaPhoto(open('Kinich1.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Kinich2.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Kinich3.jpg', 'rb')),]
+        media = [telebot.types.InputMediaPhoto(open('pic/Kinich1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Kinich2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Kinich3.jpg', 'rb')),]
         bot.send_media_group(call.message.chat.id, media)
         bot.send_message(call.message.chat.id, '''
 Кинич — охотник на заврианов, который повсюду передвигается со своим ручным дракончиком по имени Кухул Ахав. 
@@ -959,9 +959,9 @@ def answer(call):
         btn112 = types.InlineKeyboardButton('🔙back', callback_data = 'back_sbor')
         markup54.add(btn112)
         bot.delete_message(call.message.chat.id, call.message.message_id)
-        media = [telebot.types.InputMediaPhoto(open('Emilia1.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Emilia2.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Emilia3.jpg', 'rb')),]
+        media = [telebot.types.InputMediaPhoto(open('pic/Emilia1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Emilia2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Emilia3.jpg', 'rb')),]
         bot.send_media_group(call.message.chat.id, media)
         bot.send_message(call.message.chat.id, '''
 Эмилия — известный парфюмер из Фонтейна. 
@@ -975,9 +975,9 @@ def answer(call):
         btn113 = types.InlineKeyboardButton('🔙back', callback_data = 'back_sbor')
         markup55.add(btn113)
         bot.delete_message(call.message.chat.id, call.message.message_id)
-        media = [telebot.types.InputMediaPhoto(open('Xaitam1.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Xaitam2.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Xaitam3.jpg', 'rb')),]
+        media = [telebot.types.InputMediaPhoto(open('pic/Xaitam1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Xaitam2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Xaitam3.jpg', 'rb')),]
         bot.send_media_group(call.message.chat.id, media)
         bot.send_message(call.message.chat.id, '''
 Аль-Хайтам – ученый и секретарь Академии Сумеру, который полагается исключительно на науку и факты. 
@@ -991,9 +991,9 @@ def answer(call):
         btn114 = types.InlineKeyboardButton('🔙back', callback_data = 'back_sbor')
         markup56.add(btn114)
         bot.delete_message(call.message.chat.id, call.message.message_id)
-        media = [telebot.types.InputMediaPhoto(open('Tignari1.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Tignari2.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('Tignari3.jpg', 'rb')),]
+        media = [telebot.types.InputMediaPhoto(open('pic/Tignari1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Tignari2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/Tignari3.jpg', 'rb')),]
         bot.send_media_group(call.message.chat.id, media)
         bot.send_message(call.message.chat.id, '''
 Тигнари – всегда приходит на помощь нуждающимся, решая проблемы быстро и профессионально. 
@@ -1006,9 +1006,9 @@ def answer(call):
         btn115 = types.InlineKeyboardButton('🔙back', callback_data = 'back_sbor')
         markup57.add(btn115)
         bot.delete_message(call.message.chat.id, call.message.message_id)
-        media = [telebot.types.InputMediaPhoto(open('BaiZhy1.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('BaiZhy2.jpg', 'rb')),
-        telebot.types.InputMediaPhoto(open('BaiZhy3.jpg', 'rb')),]
+        media = [telebot.types.InputMediaPhoto(open('pic/BaiZhy1.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/BaiZhy2.jpg', 'rb')),
+        telebot.types.InputMediaPhoto(open('pic/BaiZhy3.jpg', 'rb')),]
         bot.send_media_group(call.message.chat.id, media)
         bot.send_message(call.message.chat.id, '''
 Бай Чжу – лекарь из хижины «Бубу» в Ли Юэ. 
