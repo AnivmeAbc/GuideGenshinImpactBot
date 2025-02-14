@@ -13,7 +13,6 @@
 
 
 # Запуск бота
-Бот написан на языке Python на библиотеке Telebot
 - Установить версию Python 3.13     `https://www.python.org/downloads/release/python-3130/`
   ''при установке Python нажать галочку на установку PYTH''
 - В VS Code нажимаем Ctrl + `, это откроет консоль
