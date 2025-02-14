@@ -13,10 +13,12 @@
 
 
 # Запуск бота
-
+Бот написан на языке Python на библиотеке Telebot
 - Установить версию Python 3.13     `https://www.python.org/downloads/release/python-3130/`
   ''при установке Python нажать галочку на установку PYTH''
-- Установить telebot     `pip install pyTelegramBotAPI`
+- В VS Code нажимаем Ctrl + `, это откроет консоль
+- Установить telebot через консоль командой   `pip install pyTelegramBotAPI`
+- Установить Python в VS Code
 - Скачать папку pic и поместить в одну папку с main.py
 - Вставить Ваш BOT_API     `https://t.me/BotFather`
 - Запустить бота через main.py
