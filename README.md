@@ -36,5 +36,5 @@
 
 Для вопросов и предложений обращайтесь к автору проекта:
 - Anivme and Abc
-- Email: anivmeoff@outloo.com
+- Email: anivmeoff@outlook.com
          nagovitcynyan@gmail.com
