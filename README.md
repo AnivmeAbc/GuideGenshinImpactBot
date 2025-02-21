@@ -17,9 +17,9 @@
 -**Витая Бездна**: Бот подскажет какие враги вас ждут на 12 этаже и количество их здоровья, а также порядок волн врагов
 
 # Требования для запуска бота
--Установить библиотеку Telebot
-  Telebot - это библиотека для создания Telegram-ботов
-  Установка: `pip install pyTelegramBotAPI`
+-Установить библиотеку Telebot:
+  1.Telebot - это библиотека для создания Telegram-ботов
+  2.Установка: `pip install pyTelegramBotAPI`
 -Установить Python
   Версия должна быть 3.13 и выше `https://www.python.org/downloads/release/python-3130/`
   >[!CAUTION]
