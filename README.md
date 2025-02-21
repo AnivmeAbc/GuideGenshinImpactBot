@@ -63,5 +63,6 @@ python main.py
 
 Для вопросов и предложений обращайтесь к автору проекта:
 - Anivme and Abc
-- Email: anivmeoff@outlook.com
-         nagovitcynyan@gmail.com
+- Email:
+         - anivmeoff@outlook.com
+         - nagovitcynyan@gmail.com
