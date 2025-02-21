@@ -18,8 +18,11 @@
 
 # Требования для запуска бота
 -Установить библиотеку Telebot:
+<br/>
   1.Telebot - это библиотека для создания Telegram-ботов
   2.Установка: `pip install pyTelegramBotAPI`
+
+  
 -Установить Python
   Версия должна быть 3.13 и выше `https://www.python.org/downloads/release/python-3130/`
   >[!CAUTION]
